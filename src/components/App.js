@@ -1,5 +1,6 @@
 import React from 'react'
 import Article from './Article'
+import articles from '../articles'
 
 function App() {
 
@@ -9,8 +10,8 @@ function App() {
         <div className="hello" style={{color: 'cadetblue'}}>
             <h1>Hello World!</h1>
             {adv}
-            <Article/>
-            <Article/>
+            <Article article={articles[0]} foo="bar" flag/>
+            <Article article={articles[1]}/>
         </div>
     )
 }
