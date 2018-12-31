@@ -1,5 +1,37 @@
 ## React sandbox
 
+### JSX
+
+[Babel - Try it out](https://babeljs.io/repl)
+
+```
+function App() {
+  
+    const adv = <section>some adv</section>
+          
+    return (
+        <div className="hello" style={{color: 'cadetblue'}}>
+            <h1>Hello World!</h1>
+            {adv}
+            <Article/>
+            <Article/>
+        </div>
+    )
+}
+
+function Article() {
+  
+    return (
+        <div>
+            <h2>Title</h2>
+            <section>Text</section>
+            <p>
+                created: {(new Date).toDateString()}
+            </p>
+        </div>
+    )
+}
+```
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
