@@ -1,5 +1,12 @@
 ## React sandbox
 
+### Bootstrap
+
+```
+sudo npm install yarn -g
+yarn add bootstrap
+```
+
 ### JSX
 
 [Babel - Try it out](https://babeljs.io/repl)
