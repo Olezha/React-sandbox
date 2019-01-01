@@ -2,19 +2,9 @@ import React, {Component} from 'react'
 
 class Article extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isOpen: true
-        };
-
-        this.handleClick = handleClick.bind(this)
-    }
-
-    // state = {
-    //     isOpen: true
-    // };
+    state = {
+        isOpen: true
+    };
 
     render() {
         const {article} = this.props;
@@ -34,12 +24,12 @@ class Article extends Component {
             </div>
         )
     }
-}
 
-function handleClick() {
-    this.setState({
-        isOpen: !this.state.isOpen
-    })
+    handleClick = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        })
+    }
 }
 
 export default Article
