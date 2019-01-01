@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
+// import React, {PureComponent} from 'react'
 
 class Article extends Component {
+// class Article extends PureComponent {
 
     // constructor
 
@@ -18,16 +20,18 @@ class Article extends Component {
         console.log('Article DidMount');
     }
 
-    componentWillReceiveProps(nextProps) {
-        // if (nextProps.isOpen !=== this.props.isOpen) {}
-        console.log(nextProps);
+    // componentWillReceiveProps(nextProps) {
+    //     // if (nextProps.isOpen !== this.props.isOpen) {}
+    // }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        // return nextProps !== this.props || nextState !== this.state;
+        return nextState !== this.state;
     }
 
-    // shouldComponentUpdate(nextProps, nextState) {}
-
     componentWillUpdate(nextProps, nextState) {
-        console.log('Article WillUpdate')
-    } // render - componentDidUpdate(prevProps, prevState)
+        console.log('Article WillUpdate', nextProps, nextState)
+    } // -> render -> componentDidUpdate(prevProps, prevState)
 
     // componentWillUnmount() {}
 
