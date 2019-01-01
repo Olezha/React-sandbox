@@ -2,9 +2,34 @@ import React, {Component} from 'react'
 
 class Article extends Component {
 
+    // constructor
+
     state = {
         isOpen: true
     };
+
+    componentWillMount() {
+        console.log('Article WillMount');
+    }
+
+    // render
+
+    componentDidMount() {
+        console.log('Article DidMount');
+    }
+
+    componentWillReceiveProps(nextProps) {
+        // if (nextProps.isOpen !=== this.props.isOpen) {}
+        console.log(nextProps);
+    }
+
+    // shouldComponentUpdate(nextProps, nextState) {}
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log('Article WillUpdate')
+    } // render - componentDidUpdate(prevProps, prevState)
+
+    // componentWillUnmount() {}
 
     render() {
         const {article} = this.props;
