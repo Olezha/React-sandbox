@@ -30,13 +30,13 @@ class Article extends Component {
     // componentWillUnmount() {}
 
     render() {
-        const {article, isOpen} = this.props;
+        const {article, isOpen, onButtonClickCallback} = this.props;
         const text = isOpen && <section>{article.text}</section>;
 
         return (
             <div className="card">
                 <div className="card-header">
-                    <button onClick={this.handleClick}
+                    <button onClick={onButtonClickCallback}
                             className="btn btn-primary float-right">
                         {isOpen ? 'close' : 'open'}
                     </button>
@@ -48,12 +48,6 @@ class Article extends Component {
                 </div>
             </div>
         )
-    }
-
-    handleClick = () => {
-        // this.setState({
-        //     isOpen: !this.state.isOpen
-        // })
     }
 }
 

@@ -12,11 +12,11 @@ class ArticleList extends PureComponent {
         console.log(3);
 
         const articleElements = this.props.articles.map((article, index) =>
-            <li onClick={this.handleClick.bind(this, article.id)}
-                key={article.id} className="article-list__li">
+            <li key={article.id} className="article-list__li">
                 <p>{index}</p>
                 <Article article={article}
-                         isOpen={this.state.openArticleId === article.id}/>
+                         isOpen={this.state.openArticleId === article.id}
+                         onButtonClickCallback={this.handleClick.bind(this, article.id)}/>
                 {console.log(this.state.openArticleId === article.id, this.state.openArticleId, article.id)}
             </li>
         );
@@ -29,7 +29,8 @@ class ArticleList extends PureComponent {
     handleClick = openArticleId => {
         console.log(openArticleId);
         this.setState({
-            openArticleId: openArticleId
+            openArticleId:
+                this.state.openArticleId === openArticleId ? null : openArticleId
         })
     }
 }
