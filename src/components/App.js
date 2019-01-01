@@ -1,15 +1,17 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import ArticleList from './ArticleList'
 import articles from '../articles'
 import 'bootstrap/dist/css/bootstrap.css'
 
-class App extends Component {
+class App extends PureComponent {
 
     state = {
         reverted: false
     };
 
     render() {
+        console.log(2, this.state);
+
         const adv = <section style={{margin: '20px'}}>some adv</section>;
 
         return (
@@ -22,15 +24,15 @@ class App extends Component {
                 </div>
                 {adv}
                 <ArticleList
-                    articles={this.state.reverted ? articles.reverse() : articles}/>
+                    articles={this.state.reverted ? articles.slice().reverse() : articles}/>
             </div>
         )
     }
 
     revert = () => {
+        console.log(1);
         this.setState({
-            // reverted: !this.state.reverted
-            reverted: true
+            reverted: !this.state.reverted
         })
     }
 }
