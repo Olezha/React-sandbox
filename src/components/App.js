@@ -83,7 +83,7 @@ class People extends Component {
                 }
 
                 {
-                    users.map((person, i) => <Person person={person} key={i}/>)
+                    users.map(person => <Person person={person} key={person._id}/>)
                 }
             </div>
         );
