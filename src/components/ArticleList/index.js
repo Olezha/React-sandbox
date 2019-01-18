@@ -22,7 +22,10 @@ class ArticleList extends PureComponent {
         );
 
         return (
-            <ul>{articleElements}</ul>
+            <div>
+                <h2>Articles</h2>
+                <ul style={{paddingLeft: 0}}>{articleElements}</ul>
+            </div>
         )
     }
 

@@ -24,7 +24,7 @@ class App extends PureComponent {
                 <div className="jumbotron">
                     <h1 className="display-3">Hello World!</h1>
                     <button onClick={this.revert}
-                            className="btn btn-primary">Revert
+                            className="btn btn-primary">Revert Articles
                     </button>
                 </div>
                 <People/>
