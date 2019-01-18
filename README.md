@@ -51,6 +51,8 @@ create-react-app react-sandbox
 
 In the project directory, you can run:
 
+#### `npm install`
+
 #### `npm start`
 
 Runs the app in the development mode.<br>

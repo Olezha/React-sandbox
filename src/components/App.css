@@ -1,0 +1,11 @@
+body {
+    background-color: lightseagreen;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.checked {
+    color: darkseagreen;
+}

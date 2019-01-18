@@ -23,7 +23,7 @@ class Article extends Component {
     //     return nextState !== this.state;
     // }
 
-    componentWillUpdate(nextProps, nextState) {
+    static componentWillUpdate(nextProps, nextState) {
         console.log('Article WillUpdate', nextProps, nextState)
     } // -> render -> componentDidUpdate(prevProps, prevState)
 

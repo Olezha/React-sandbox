@@ -1,7 +1,12 @@
-import React, {PureComponent} from 'react'
+import React, {PureComponent, Component} from 'react'
 import ArticleList from './ArticleList'
+import Person from './Person'
 import articles from '../articles'
+import people from '../people.json'; // from https://next.json-generator.com/
 import 'bootstrap/dist/css/bootstrap.css'
+import './App.css'
+
+console.log("people", people);
 
 class App extends PureComponent {
 
@@ -22,6 +27,7 @@ class App extends PureComponent {
                             className="btn btn-primary">Revert
                     </button>
                 </div>
+                <People/>
                 {adv}
                 <ArticleList
                     articles={this.state.reverted ? articles.slice().reverse() : articles}/>
@@ -34,6 +40,54 @@ class App extends PureComponent {
         this.setState({
             reverted: !this.state.reverted
         })
+    }
+}
+
+class People extends Component {
+
+    state = {
+        users: people
+    };
+
+    filter = (e) => {
+        let query = e.target.value.toLowerCase();
+        console.log(query);
+
+        this.setState({
+            users: people.filter(person => {
+                let name = (person.name.first + ' ' + person.name.last).toLowerCase();
+                if (name.indexOf(query) !== -1)
+                    return person;
+            })
+        });
+    };
+
+    render = () => {
+        const {users} = this.state;
+        const {filter} = this;
+
+        return (
+            <div>
+                <h2>People</h2>
+
+                <div style={{marginBottom: '15px'}}>
+                    <input onChange={filter} placeholder="Search"/>
+                </div>
+
+                {
+                    users.length === 0 &&
+                    <div className="card">
+                        <div className="card-body">
+                            Woohoo ho
+                        </div>
+                    </div>
+                }
+
+                {
+                    users.map((person, i) => <Person person={person} key={i}/>)
+                }
+            </div>
+        );
     }
 }
 
