@@ -56,8 +56,7 @@ class People extends Component {
         this.setState({
             users: people.filter(person => {
                 let name = (person.name.first + ' ' + person.name.last).toLowerCase();
-                if (name.indexOf(query) !== -1)
-                    return person;
+                return name.indexOf(query) !== -1;
             })
         });
     };
