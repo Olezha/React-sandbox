@@ -7,6 +7,7 @@ import Stateless from './Stateless'
 import Statefull from './Statefull'
 import StatefullES7 from './Statefull-es7'
 import Binding from './Binding'
+import Btn from './Btn'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
@@ -31,6 +32,15 @@ class App extends PureComponent {
             <div>Todo {props.foo}</div>
         );
 
+        const List = ({children}) => {
+
+            return(
+                <ul>
+                    {children}
+                </ul>
+            )
+        };
+
         const animals = [
             {id: 1, title: 'Bird', sound: 'Tweet. You\'re a bird', error: false},
             {id: 2, sound: 'Buzz', error: true},
@@ -40,6 +50,22 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <h2>Children elements</h2>
+                <List>
+                    {/**
+                     * Can pass:
+                     * - Text
+                     * - HTML
+                     * - Component(s)
+                     * - JS Expressions
+                     */}
+                     <li>123</li>
+                    <li><Btn text='Btn 1'/></li>
+                    <li><Btn text='Btn 2' action={() => {
+                        console.log('Button default action')
+                    }}/></li>
+                </List>
+                <hr/>
                 <Binding/>
                 <hr/>
                 <div className="jumbotron">
