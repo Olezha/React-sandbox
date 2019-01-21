@@ -5,6 +5,7 @@ import articles from '../articles'
 import people from '../people.json'; // from https://next.json-generator.com/
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
+import Image from "./Image";
 
 console.log("people", people);
 
@@ -21,6 +22,9 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <Image src="https://raw.githubusercontent.com/Olezha/React-sandbox/lazy-image/public/img/xuan-nguyen-1228716-unsplash.jpg"
+                       width="600" height="400" alt="The Honour"/>
+                <hr/>
                 <div className="jumbotron">
                     <h1 className="display-3">Hello World!</h1>
                     <button onClick={this.revert}

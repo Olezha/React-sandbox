@@ -9,3 +9,12 @@ body {
 .checked {
     color: darkseagreen;
 }
+
+img.imgLoading {
+    opacity: 0;
+}
+
+img.imgLoaded {
+    opacity: 1;
+    transition: opacity 2s linear;
+}
