@@ -16,7 +16,7 @@ class StatefullES7 extends Component {
     method = event => {
         let {data, index} = this.state;
         index === data.length - 1 ? index = 0 : index++;
-        this.setState({index})
+        this.setState({index});
     };
 
     render = () => {

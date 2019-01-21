@@ -6,6 +6,7 @@ import people from '../people.json'; // from https://next.json-generator.com/
 import Stateless from './Stateless'
 import Statefull from './Statefull'
 import StatefullES7 from './Statefull-es7'
+import Binding from './Binding'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
@@ -39,6 +40,8 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <Binding/>
+                <hr/>
                 <div className="jumbotron">
                     <h1 className="display-3">Hello World!</h1>
                     <button onClick={this.revert}
