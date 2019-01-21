@@ -8,7 +8,7 @@ class Image extends Component {
 
     onLoad = () => {
         console.log('loaded');
-        this.setState(() => ({ loaded: true }));
+        this.setState(() => ({loaded: true}));
     };
 
     render() {
@@ -16,10 +16,14 @@ class Image extends Component {
         const {src, width, height, alt} = this.props;
 
         return (
-            <img src={src} alt={alt}
-                 style={{width: width + 'px', height: height + 'px'}}
-                 onLoad={this.onLoad}
-                 className={className} />
+            <div>
+                <img src={src} alt={alt}
+                     style={{width: '49%'}}/>
+                <img src={src} alt={alt}
+                     style={{width: '49%', float: 'right'}}
+                     onLoad={this.onLoad}
+                     className={className}/>
+            </div>
         )
     };
 }
