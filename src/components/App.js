@@ -3,6 +3,9 @@ import ArticleList from './ArticleList'
 import Person from './Person'
 import articles from '../articles'
 import people from '../people.json'; // from https://next.json-generator.com/
+import Stateless from './Stateless'
+import Statefull from './Statefull'
+import StatefullES7 from './Statefull-es7'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 
@@ -19,6 +22,21 @@ class App extends PureComponent {
 
         const adv = <section style={{margin: '20px'}}>some adv</section>;
 
+        const Todo = ({foo}) => (
+            <div>Todo {foo}</div>
+        );
+
+        const Todo2 = (props) => (
+            <div>Todo {props.foo}</div>
+        );
+
+        const animals = [
+            {id: 1, title: 'Bird', sound: 'Tweet. You\'re a bird', error: false},
+            {id: 2, sound: 'Buzz', error: true},
+            {id: 3, title: 'Cat', sound: 'Meow', error: true},
+            {id: 4, title: 'Cow', sound: 'Moo - moo'}
+            ];
+
         return (
             <div className="container">
                 <div className="jumbotron">
@@ -27,6 +45,23 @@ class App extends PureComponent {
                             className="btn btn-primary">Revert Articles
                     </button>
                 </div>
+                <Todo foo="bar"/>
+                <Todo2 foo="bar"/>
+                <hr/>
+                <h2>We are the Stateless</h2>
+                <Stateless title="Dog" sound="Woof"/>
+                {
+                    animals.map(item => {
+                        return (
+                            <Stateless key={item.id} title={item.title} sound={item.sound} error={item.error}/>
+                        )
+                    })
+                }
+                <hr/>
+                <Statefull/>
+                <hr/>
+                <StatefullES7/>
+                <hr/>
                 <People/>
                 {adv}
                 <ArticleList
