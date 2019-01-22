@@ -10,6 +10,7 @@ import Binding from './Binding'
 import Btn from './Btn'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
+import TwoElements from "./TwoElements";
 
 console.log("people", people);
 
@@ -54,6 +55,9 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <TwoElements/>
+                <TwoElements second="true"/>
+                <hr/>
                 <h2>Children elements</h2>
                 <List>
                     {/**
