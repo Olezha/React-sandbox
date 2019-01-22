@@ -37,9 +37,13 @@ class App extends PureComponent {
 
         const List = ({children}) => {
 
+            const childrenWithAdditionalProps = React.Children.map(children, child =>
+                React.cloneElement(child, { class: 'additionalProps' })
+            );
+
             return (
                 <ul>
-                    {children}
+                    {childrenWithAdditionalProps}
                 </ul>
             )
         };
@@ -70,7 +74,8 @@ class App extends PureComponent {
                      * - HTML
                      * - Component(s)
                      * - JS Expressions
-                     */}
+                     */
+                    }
                     <li><Btn/></li>
                     <li><Btn text='Btn 2' action={() => {
                         console.log('Button other action')

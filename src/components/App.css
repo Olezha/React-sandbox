@@ -28,3 +28,7 @@ img.imgLoaded {
     opacity: 1;
     transition: opacity 2s linear;
 }
+
+.additionalProps {
+    margin: 5px 0;
+}
