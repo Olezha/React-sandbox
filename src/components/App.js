@@ -12,6 +12,7 @@ import Binding from './Binding'
 import Btn from './Btn'
 import TwoElements from "./TwoElements";
 import Lifecycle from "./Lifecycle";
+import Image from "./Image";
 
 // console.log("people", people);
 
@@ -78,6 +79,10 @@ class App extends PureComponent {
                 </List>
                 <hr/>
                 <Binding/>
+                <hr/>
+                <Image
+                    src="https://raw.githubusercontent.com/Olezha/React-sandbox/lazy-image/public/img/xuan-nguyen-1228716-unsplash.jpg"
+                    width="600" height="400" alt="The Honour"/>
                 <hr/>
                 <div className="jumbotron">
                     <h1 className="display-3">Hello World!</h1>
