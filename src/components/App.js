@@ -34,7 +34,7 @@ class App extends PureComponent {
 
         const List = ({children}) => {
 
-            return(
+            return (
                 <ul>
                     {children}
                 </ul>
@@ -46,7 +46,11 @@ class App extends PureComponent {
             {id: 2, sound: 'Buzz', error: true},
             {id: 3, title: 'Cat', sound: 'Meow', error: true},
             {id: 4, title: 'Cow', sound: 'Moo - moo'}
-            ];
+        ];
+
+        const btnAction = e => {
+            console.log('Event', e);
+        };
 
         return (
             <div className="container">
@@ -59,11 +63,11 @@ class App extends PureComponent {
                      * - Component(s)
                      * - JS Expressions
                      */}
-                     <li>123</li>
-                    <li><Btn text='Btn 1'/></li>
+                    <li><Btn/></li>
                     <li><Btn text='Btn 2' action={() => {
-                        console.log('Button default action')
+                        console.log('Button other action')
                     }}/></li>
+                    <li><Btn text='Btn with event' action={btnAction}/></li>
                 </List>
                 <hr/>
                 <Binding/>

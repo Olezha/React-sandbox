@@ -12,6 +12,7 @@ class Btn extends Component {
 }
 
 Btn.defaultProps = {
+    text: 'Btn',
     action: () => {
         console.log('Button default action')
     }
