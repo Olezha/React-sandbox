@@ -1,18 +1,19 @@
 import React, {PureComponent, Component} from 'react'
-import ArticleList from './ArticleList'
-import Person from './Person'
 import articles from '../articles'
 import people from '../people.json'; // from https://next.json-generator.com/
+import 'bootstrap/dist/css/bootstrap.css'
+import './App.css'
+import ArticleList from './ArticleList'
+import Person from './Person'
 import Stateless from './Stateless'
 import Statefull from './Statefull'
 import StatefullES7 from './Statefull-es7'
 import Binding from './Binding'
 import Btn from './Btn'
-import 'bootstrap/dist/css/bootstrap.css'
-import './App.css'
 import TwoElements from "./TwoElements";
+import Lifecycle from "./Lifecycle";
 
-console.log("people", people);
+// console.log("people", people);
 
 class App extends PureComponent {
 
@@ -21,7 +22,7 @@ class App extends PureComponent {
     };
 
     render() {
-        console.log(2, this.state);
+        // console.log(2, this.state);
 
         const adv = <section style={{margin: '20px'}}>some adv</section>;
 
@@ -55,6 +56,8 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <Lifecycle/>
+                <hr/>
                 <TwoElements/>
                 <TwoElements second="true"/>
                 <hr/>
