@@ -14,6 +14,7 @@ import TwoElements from "./TwoElements";
 import Lifecycle from "./Lifecycle";
 import Image from "./Image";
 import CompWithPropTypes from "./PropTypes";
+import ControlledForm from "./ControlledForm";
 
 // console.log("people", people);
 
@@ -64,6 +65,8 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <ControlledForm/>
+                <hr/>
                 <CompWithPropTypes
                     type="Foo"
                     ReactEl={<ComponentToSend/>}
