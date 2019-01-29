@@ -13,7 +13,7 @@ import Btn from './Btn';
 import TwoElements from "./TwoElements";
 import Lifecycle from "./Lifecycle";
 import Image from "./Image";
-import PropTypes from "./PropTypes";
+import CompWithPropTypes from "./PropTypes";
 
 // console.log("people", people);
 
@@ -64,9 +64,20 @@ class App extends PureComponent {
 
         return (
             <div className="container">
-                <PropTypes>
+                <CompWithPropTypes
+                    type="Foo"
+                    ReactEl={<ComponentToSend/>}
+                    someStuff={{one: 'one'}}
+                    action={() => console.log('do smsng')}
+                    arrayProp={[]}
+                    somethingTrue={true}
+                    stringProp="Str"
+                    user={{
+                        name: 'Olezha'
+                    }}
+                >
                     <ComponentToSend/>
-                </PropTypes>
+                </CompWithPropTypes>
                 <hr/>
                 <Lifecycle/>
                 <hr/>
