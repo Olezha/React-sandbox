@@ -14,14 +14,19 @@ import TwoElements from "./TwoElements";
 import Lifecycle from "./Lifecycle";
 import Image from "./Image";
 import CompWithPropTypes from "./PropTypes";
+import Child from "./Child";
+import Toggler, {TogglerItem} from "./Child/toggler";
 
 // console.log("people", people);
 
 class App extends PureComponent {
 
     state = {
-        reverted: false
+        reverted: false,
+        activeToggler: 'left'
     };
+
+    changeStatus = () => {};
 
     render() {
         // console.log(2, this.state);
@@ -64,6 +69,19 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <Toggler activeToggler={this.state.activeToggler} changeStatus={this.changeStatus}>
+                    <TogglerItem name="left"/>
+                    <TogglerItem name="center"/>
+                    <TogglerItem name="right"/>
+                </Toggler>
+                <hr/>
+                <Child someProp="123">
+                    "Some string"
+                    <ComponentToSend/>
+                    <ComponentToSend/>
+                    <ComponentToSend/>
+                </Child>
+                <hr/>
                 <CompWithPropTypes
                     type="Foo"
                     ReactEl={<ComponentToSend/>}
