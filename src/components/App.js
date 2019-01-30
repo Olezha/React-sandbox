@@ -16,6 +16,7 @@ import Image from "./Image";
 import CompWithPropTypes from "./PropTypes";
 import Child from "./Child";
 import Toggler, {TogglerItem} from "./Child/toggler";
+import ControlledForm from "./ControlledForm";
 
 // console.log("people", people);
 
@@ -72,6 +73,8 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <ControlledForm/>
+                <hr/>
                 <Toggler activeToggler={this.state.activeToggler} changeStatus={this.changeStatus}>
                     <TogglerItem name="left"/>
                     <TogglerItem name="center"/>
@@ -84,7 +87,6 @@ class App extends PureComponent {
                     <ComponentToSend/>
                     <ComponentToSend/>
                 </Child>
-                <hr/>
                 <CompWithPropTypes
                     type="Foo"
                     ReactEl={<ComponentToSend/>}
