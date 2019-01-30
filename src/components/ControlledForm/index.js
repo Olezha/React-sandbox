@@ -24,6 +24,7 @@ class ControlledForm extends Component {
 
         this.setState({
             data: {
+                ...this.props.data,
                 [name]: value
             }
         });
