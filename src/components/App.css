@@ -32,3 +32,7 @@ img.imgLoaded {
 .additionalProps {
     margin: 5px 0;
 }
+
+.togglerItem.active {
+    font-weight: 600;
+}

@@ -26,7 +26,10 @@ class App extends PureComponent {
         activeToggler: 'left'
     };
 
-    changeStatus = () => {};
+    changeStatus = (e) => {
+        console.log('changeStatus', e.target.dataset.value);
+        this.setState({activeToggler: e.target.dataset.value});
+    };
 
     render() {
         // console.log(2, this.state);

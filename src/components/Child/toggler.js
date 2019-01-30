@@ -3,10 +3,26 @@ import React, {Component} from 'react';
 class Toggler extends Component {
 
     render = () => {
+        let {name, children, changeStatus, activeToggler} = this.props;
+
         return (
             <div>
                 <h3>Toggler</h3>
-                {this.props.children}
+                {
+                    React.Children.map(children, ChildrenItem => {
+                        if (ChildrenItem.props.name === activeToggler)
+                            return React.cloneElement(ChildrenItem, {
+                                name: ChildrenItem.props.name,
+                                active: true,
+                                changeStatus: changeStatus
+                            });
+                        else
+                            return React.cloneElement(ChildrenItem, {
+                                name: ChildrenItem.props.name,
+                                changeStatus: changeStatus
+                            });
+                    })
+                }
             </div>
         )
     }
