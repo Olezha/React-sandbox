@@ -6,12 +6,11 @@ class ControlledForm extends Component {
         data: {
             user: "",
             password: "",
-            lang: "",
-            activeToggler: "left"
+            lang: ""
         }
     };
 
-    handleSubmit = (event) => {
+    handleSubmit = event => {
         event.preventDefault();
         console.log('submitted data: ', this.state.data);
     };
@@ -24,7 +23,7 @@ class ControlledForm extends Component {
 
         this.setState({
             data: {
-                ...this.props.data,
+                ...this.state.data,
                 [name]: value
             }
         });
@@ -65,6 +64,7 @@ class ControlledForm extends Component {
                                id="inputLang"
                                placeholder="Enter favorite programming language"/>
                     </div>
+                    <button type="submit" className="btn btn-outline-warning btn-sm">Submit</button>
                 </form>
             </div>
         )
