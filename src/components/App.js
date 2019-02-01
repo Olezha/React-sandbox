@@ -17,6 +17,7 @@ import CompWithPropTypes from "./PropTypes";
 import Child from "./Child";
 import Toggler, {TogglerItem} from "./Child/toggler";
 import ControlledForm from "./ControlledForm";
+import Ref from "./Ref/index";
 
 // console.log("people", people);
 
@@ -73,6 +74,8 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <Ref/>
+                <hr/>
                 <ControlledForm/>
                 <hr/>
                 <Toggler activeToggler={this.state.activeToggler} changeStatus={this.changeStatus}>
