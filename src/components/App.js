@@ -18,6 +18,7 @@ import Child from "./Child";
 import Toggler, {TogglerItem} from "./Child/toggler";
 import ControlledForm from "./ControlledForm";
 import Ref from "./Ref/index";
+import ImageUploader from "./ImageUploader";
 
 // console.log("people", people);
 
@@ -74,6 +75,8 @@ class App extends PureComponent {
 
         return (
             <div className="container">
+                <ImageUploader/>
+                <hr/>
                 <Ref/>
                 <hr/>
                 <ControlledForm/>
